@@ -74,21 +74,21 @@ def process(file_path):
             i += 1
     t = sort_word
     if t[0] == 'm':
-        t = 'Merge Sort_voice'
+        t = 'Merge Sort'
     if t[0] == 'b':
-        t = 'Bubble Sort_voice'
+        t = 'Bubble Sort'
     if t[0] == 'i':
-        t = 'Insertion Sort_voice'
+        t = 'Insertion Sort'
     if t[0] == 'q':
-        t = 'Quick Sort_voice'
+        t = 'Quick Sort'
     if t[0] == 'r':
-        t = 'Radix Sort_voice'
+        t = 'Radix Sort'
     if t[0] == 'c':
-        t = 'Counting Sort_voice'
+        t = 'Counting Sort'
     if t == 'shellsort':
-        t = 'Shell Sort_voice'
+        t = 'Shell Sort'
     if t == 'selectionsort':
-        t = 'Selection Sort_voice'
+        t = 'Selection Sort'
 
     numbers = [x for x in numbers if x!= 0]
     return t, numbers
