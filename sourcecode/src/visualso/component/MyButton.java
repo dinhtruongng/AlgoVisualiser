@@ -17,7 +17,7 @@ public class MyButton extends JButton{
 	}
 	public MyButton(int x, int y, Color color) {
 		super();
-		setModel(new FixedStateButtonModel());
+//		setModel(new FixedStateButtonModel());
 		setRolloverEnabled(false);
 		setMargin(new Insets(0,0,0,0));	
 		setFocusable(false);
