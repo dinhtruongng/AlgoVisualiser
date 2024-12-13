@@ -75,7 +75,7 @@ public class HomeScreen extends BaseScreen {
 		MyButton btnSort = new MyButton(50, 30, Color.CYAN);
 		btnSort.setText("Sort");
 		btnSort.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-//		btnSort.addActionListener(baseController.sortButtonClicked()); Add later to use voice command feature
+		btnSort.addActionListener(baseController.sortButtonClicked());
 		helpPane.add(btnSort,1);
 		return helpPane;
 	}
