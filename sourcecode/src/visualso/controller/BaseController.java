@@ -4,6 +4,8 @@ package visualso.controller;
 import visualso.listener.ExitListener;
 import visualso.listener.HelpAboutListener;
 
+import java.awt.event.ActionListener;
+
 public class BaseController {
 	public HelpAboutListener helpButtonClicked(String name,String helpInfo) {
 		return new HelpAboutListener(name,helpInfo);
@@ -11,4 +13,9 @@ public class BaseController {
 	public ExitListener exitButtonClicked() {
 		return new ExitListener();
 	}
+
+	public ActionListener recordButtonClicked() {
+		return new RecordListener();
+	}
+
 }
