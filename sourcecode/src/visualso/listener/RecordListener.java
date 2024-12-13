@@ -108,7 +108,7 @@ public class RecordListener implements ActionListener {
 
     public static void VoiceToText() {
         try {
-            String wavFilePath = "D:\\Documents\\OOP_projectv2\\visualso\\visualso\\assets\\recorded_audio.wav";
+            String wavFilePath = "D:\\Documents\\AlgoVisualiser\\sourcecode\\src\\visualso\\assets\\recorded_audio.wav";
 
             String pythonCommand = "python3";
             String pythonScriptPath = "script.py";
@@ -129,7 +129,7 @@ public class RecordListener implements ActionListener {
 
             process.waitFor();
 
-            String outputFilePath = "D:\\Documents\\OOP_projectv2\\visualso\\visualso\\assets\\output.txt";
+            String outputFilePath = "D:\\Documents\\AlgoVisualiser\\sourcecode\\src\\visualso\\assets\\output.txt";
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath))) {
                 writer.write(output.toString());
                 System.out.println("Output has been written to: " + outputFilePath);
