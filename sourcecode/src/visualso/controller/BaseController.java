@@ -4,6 +4,7 @@ package visualso.controller;
 import visualso.listener.ExitListener;
 import visualso.listener.HelpAboutListener;
 import visualso.listener.RecordListener;
+import visualso.listener.VoiceSortListener;
 
 import java.awt.event.ActionListener;
 
@@ -17,6 +18,10 @@ public class BaseController {
 
 	public ActionListener recordButtonClicked() {
 		return new RecordListener();
+	}
+
+	public ActionListener sortButtonClicked() {
+		return new VoiceSortListener();
 	}
 
 }

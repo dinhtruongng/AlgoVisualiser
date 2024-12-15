@@ -12,13 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
-import visualso.view.BubbleSortScreen;
-import visualso.view.InsertionSortScreen;
-import visualso.view.CountingSortScreen;
-import visualso.view.MergeSortScreen;
-import visualso.view.QuickSortScreen;
-import visualso.view.RadixSortScreen;
-import visualso.view.SelectionSortScreen;
+import visualso.view.*;
 
 public class VoiceSortListener implements ActionListener {
     String name;
