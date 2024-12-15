@@ -16,12 +16,4 @@ public class BaseController {
 		return new ExitListener();
 	}
 
-	public ActionListener recordButtonClicked() {
-		return new RecordListener();
-	}
-
-	public ActionListener sortButtonClicked() {
-		return new VoiceSortListener();
-	}
-
 }

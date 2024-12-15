@@ -62,7 +62,7 @@ public class HomeScreen extends BaseScreen {
 		btnRecord.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		btnRecord.setText("Rec");
 		btnRecord.setFont(new Font("Sans", Font.BOLD, 17));
-		btnRecord.addActionListener(baseController.recordButtonClicked());
+		btnRecord.addActionListener(homeController.recordButtonClicked());
 		helpPane.add(btnRecord,1,0);
 		btnRecord.addActionListener(e -> {
 			//toggle between red and green
@@ -75,7 +75,7 @@ public class HomeScreen extends BaseScreen {
 		MyButton btnSort = new MyButton(50, 30, Color.CYAN);
 		btnSort.setText("Sort");
 		btnSort.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-		btnSort.addActionListener(baseController.sortButtonClicked());
+		btnSort.addActionListener(homeController.sortButtonClicked());
 		helpPane.add(btnSort,1);
 		return helpPane;
 	}
