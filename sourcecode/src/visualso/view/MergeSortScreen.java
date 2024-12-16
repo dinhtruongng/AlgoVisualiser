@@ -78,7 +78,7 @@ public class MergeSortScreen extends SortingScreen{
 	public void updateMainArray(int[] array) {
 		MergeSortScreen a = new MergeSortScreen(){
 			@Override
-			public void setMainArray() {
+			public void setMainArray(int[] arr) {
 				this.mainArray = array;
 			}		
 		};

@@ -31,12 +31,6 @@ import visualso.component.Visualizer;
 import visualso.controller.SortingController;
 import visualso.util.ArrayUtils;
 import visualso.util.ColorUtils;
-import java.util.Arrays;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.io.IOException;
-import java.util.List;
 import visualso.util.DataUtils;
 
 @SuppressWarnings("serial")
@@ -68,7 +62,7 @@ public abstract class SortingScreen extends BaseScreen {
 	public SortingScreen() {
 		super();
 		sortingController = new SortingController(this);
-		setMainArray();
+		setMainArray(null);
 
 		if (ArrayUtils.max(mainArray) !=0) {
 			unitHeight = ((double)250) / ((double)ArrayUtils.max(mainArray));}
@@ -291,33 +285,13 @@ public abstract class SortingScreen extends BaseScreen {
 		return mainArray;
 	}
 	
-	public void setMainArray() {
-		// Define the file path
-		String filePath = "D:\\Documents\\AlgoVisualiser\\sourcecode\\src\\visualso\\assets\\output.txt";
-
-		// Declare the variable outside the try block
-		String secondLine = "";
-
-		try {
-			// Read all lines from the file
-			Path path = Paths.get(filePath);
-			List<String> lines = Files.readAllLines(path); // Reads file content into a list of lines
-
-			// Assign the first line to the variable
-			if (!lines.isEmpty()) {
-				secondLine = lines.get(1); // Get the first line
-			}
-		} catch (IOException e) {
-			System.err.println("An error occurred while reading the file: " + e.getMessage());
+	public void setMainArray(int[] array) {
+		if (mainArray == null) {
+			mainArray = DataUtils.randomArray(SortingController.MAX_LENGTH, getMaxValue());
 		}
-		String[] stringNumbers = secondLine.replaceAll("[\\[\\]\\s]", "").split(",");
-
-		// Convert the string array to an int array
-		int[] array = Arrays.stream(stringNumbers)
-				.mapToInt(Integer::parseInt)
-				.toArray();
-		mainArray = array;
-	}
+		else {
+			this.mainArray = array;}
+		}
 	
 	public JSlider getProcessSlider() {
 		return processSlider;

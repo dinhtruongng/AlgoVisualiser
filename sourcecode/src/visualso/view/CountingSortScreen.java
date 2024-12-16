@@ -86,7 +86,7 @@ public class CountingSortScreen extends SortingScreen {
 	public void updateMainArray(int[] array) {
 		CountingSortScreen a = new CountingSortScreen(){
 			@Override
-			public void setMainArray() {
+			public void setMainArray(int[] arr) {
 				this.mainArray = array;
 			}		
 		};
