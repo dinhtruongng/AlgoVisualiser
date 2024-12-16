@@ -80,7 +80,7 @@ public class ShellSortScreen extends SortingScreen {
     public void updateMainArray(int[] array) {
         ShellSortScreen newScreen = new ShellSortScreen() {
             @Override
-            public void setMainArray(int[] arr) {
+            public void setMainArray() {
                 this.mainArray = array;
             }
         };

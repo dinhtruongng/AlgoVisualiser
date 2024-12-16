@@ -81,7 +81,7 @@ public class QuickSortScreen extends SortingScreen {
     public void updateMainArray(int[] array) {
         QuickSortScreen newScreen = new QuickSortScreen() {
             @Override
-            public void setMainArray(int[] arr) {
+            public void setMainArray() {
                 this.mainArray = array;
             }
         };

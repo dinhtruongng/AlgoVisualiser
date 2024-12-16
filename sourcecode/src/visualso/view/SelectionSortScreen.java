@@ -81,7 +81,7 @@ public class SelectionSortScreen extends SortingScreen {
     public void updateMainArray(int[] array) {
         SelectionSortScreen newScreen = new SelectionSortScreen() {
             @Override
-            public void setMainArray(int[] arr) {
+            public void setMainArray() {
                 this.mainArray = array;
             }
         };

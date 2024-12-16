@@ -80,7 +80,7 @@ public class InsertionSortScreen extends SortingScreen {
     public void updateMainArray(int[] array) {
         InsertionSortScreen newScreen = new InsertionSortScreen() {
             @Override
-            public void setMainArray(int[] arr) {
+            public void setMainArray() {
                 this.mainArray = array;
             }
         };
