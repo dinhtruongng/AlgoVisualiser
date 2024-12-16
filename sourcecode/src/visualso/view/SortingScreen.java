@@ -197,12 +197,12 @@ public abstract class SortingScreen extends BaseScreen {
 		MyButton btnHelp = new MyButton(50,45,Color.BLACK);
 		btnHelp.setText("Help");
 		btnHelp.setBorder(BorderFactory.createEmptyBorder(0,0,12,0));
-		btnHelp.addActionListener(baseController.helpButtonClicked("Help", newHelpInfo()));
+		btnHelp.addActionListener(baseController.helpButtonClicked());
 		//About button
 		MyButton btnAbout = new MyButton(50,45,Color.BLACK);
 		btnAbout.setText("About");
 		btnAbout.setBorder(BorderFactory.createEmptyBorder(0,0,12,0));
-		btnAbout.addActionListener(baseController.helpButtonClicked("About",aboutInfo));
+		btnAbout.addActionListener(baseController.aboutButtonClicked("About",aboutInfo));
 		guidePane.add(btnHelp);
 		guidePane.add(btnAbout);
 		return guidePane;

@@ -51,13 +51,15 @@ public class HomeScreen extends BaseScreen {
 	private JPanel createHelpPane() {
 		JPanel helpPane = new JPanel();
 		MyButton btnHelp = new MyButton(50,30,Color.BLACK); 
-		btnHelp.setText("Help");
-		btnHelp.addActionListener(baseController.helpButtonClicked("Help",helpInfo));
+		btnHelp.setText("Chat");
+		btnHelp.addActionListener(baseController.helpButtonClicked());
 		helpPane.add(btnHelp);
+
 		MyButton btnAbout = new MyButton(50,30,Color.BLACK); 
 		btnAbout.setText("About");
-		btnAbout.addActionListener(baseController.helpButtonClicked("About",aboutInfo));
+		btnAbout.addActionListener(baseController.aboutButtonClicked("About",aboutInfo));
 		helpPane.add(btnAbout);
+		
 		return helpPane;
 	}
 	

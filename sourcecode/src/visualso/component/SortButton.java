@@ -3,7 +3,7 @@ package visualso.component;
 import java.awt.Color;
 // import java.awt.Image;
 import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
+// import java.awt.event.ComponentEvent;
 
 // import javax.swing.Icon;
 // import javax.swing.ImageIcon;
