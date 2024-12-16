@@ -10,11 +10,6 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import javax.swing.JButton;
-
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class RecordListener implements ActionListener {
 
@@ -83,7 +78,7 @@ public class RecordListener implements ActionListener {
 
     private void saveAudioToFile(byte[] audioBytes) {
         try {
-            File assetsDir = new File("assets");
+            File assetsDir = new File("sourcecode\\assets");
             if (!assetsDir.exists()) {
                 assetsDir.mkdir();
             }
@@ -108,10 +103,11 @@ public class RecordListener implements ActionListener {
 
     public static void VoiceToText() {
         try {
-            String wavFilePath = "D:\\Documents\\AlgoVisualiser\\sourcecode\\src\\visualso\\assets\\recorded_audio.wav";
+            String wavFilePath = new File("sourcecode\\assets").getAbsolutePath() + "\\recorded_audio.wav";
 
-            String pythonCommand = "python3";
-            String pythonScriptPath = "script.py";
+            // String pythonCommand = "python3";
+            String pythonCommand = "python";
+            String pythonScriptPath = "sourcecode\\src\\visualso\\script.py";
 
             ProcessBuilder processBuilder = new ProcessBuilder(pythonCommand, pythonScriptPath, wavFilePath);
             processBuilder.redirectErrorStream(true);
@@ -129,7 +125,7 @@ public class RecordListener implements ActionListener {
 
             process.waitFor();
 
-            String outputFilePath = "D:\\Documents\\AlgoVisualiser\\sourcecode\\src\\visualso\\assets\\output.txt";
+            String outputFilePath = new File("sourcecode\\assets").getAbsolutePath() + "\\output.txt";
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath))) {
                 writer.write(output.toString());
                 System.out.println("Output has been written to: " + outputFilePath);
@@ -140,7 +136,7 @@ public class RecordListener implements ActionListener {
     }
 
     private void GetSortType() {
-        String outputFilepath = "D:\\Documents\\AlgoVisualiser\\sourcecode\\src\\visualso\\assets\\output.txt";
+        String outputFilepath = new File("sourcecode\\assets").getAbsolutePath() + "\\output.txt";
 
         try {
             // Read all lines from the file
@@ -153,13 +149,13 @@ public class RecordListener implements ActionListener {
             System.out.println("Array: " + array);
 
             // Write to the file
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter("D:\\Documents\\OOP_projectv2\\visualso\\visualso\\assets\\sortType.txt"))) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("sourcecode\\assets\\sortType.txt"))) {
                 writer.write(sortType);
             } catch (IOException e) {
                 System.err.println("An error occurred while writing to the file: " + e.getMessage());
             }
 
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter("D:\\Documents\\OOP_projectv2\\visualso\\visualso\\assets\\array.txt"))) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("sourcecode\\assets\\array.txt"))) {
                 writer.write(array);
             } catch (IOException e) {
                 System.err.println("An error occurred while writing to the file: " + e.getMessage());

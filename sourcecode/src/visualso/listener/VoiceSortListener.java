@@ -3,6 +3,7 @@ package visualso.listener;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class VoiceSortListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String filePath = "D:\\Documents\\AlgoVisualiser\\sourcecode\\src\\visualso\\assets\\output.txt";
+        String filePath = new File("sourcecode\\assets").getAbsolutePath() + "\\output.txt";
 
         try {
             Path path = Paths.get(filePath);
