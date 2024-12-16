@@ -83,7 +83,7 @@ public class RadixSortScreen extends SortingScreen {
 	public void updateMainArray(int[] array) {
 		RadixSortScreen a = new RadixSortScreen() {
 			@Override
-			public void setMainArray(int[] arr) {
+			public void setMainArray() {
 				this.mainArray = array;
 			}		
 		};
