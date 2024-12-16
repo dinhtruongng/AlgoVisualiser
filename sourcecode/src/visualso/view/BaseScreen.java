@@ -17,7 +17,7 @@ public abstract class BaseScreen extends JFrame {
 	JPanel buttonGroup;
 	//File directory
 	// public static final String ASSET_PATH = new File("").getAbsoluteFile() + "\\assets\\";
-	public static final String ASSET_PATH = new File("").getAbsoluteFile() + "\\sourcecode\\assets\\";
+	public static final String ASSET_PATH = new File("sourcecode").getAbsoluteFile() + "\\assets\\";
 	String helpInfo = "Sorting Alogorithm is a basic concept that every "
 			                  + "programmer should have known.\n \n "
 			                  + "There are a lot of sorting algorithms, "
