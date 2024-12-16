@@ -13,6 +13,7 @@ import visualso.view.MergeSortScreen;
 import visualso.view.QuickSortScreen;
 import visualso.view.RadixSortScreen;
 import visualso.view.SelectionSortScreen;
+import visualso.view.ShellSortScreen;
 
 public class SortListener implements ActionListener{
 	private String name;
@@ -36,7 +37,7 @@ public class SortListener implements ActionListener{
 			SwingUtilities.windowForComponent(((JButton)e.getSource())).dispose();
 			break;
 		case "Shell Sort":
-			new CountingSortScreen();
+			new ShellSortScreen();
 			SwingUtilities.windowForComponent(((JButton)e.getSource())).dispose();
 			break;
 		case "Selection Sort":

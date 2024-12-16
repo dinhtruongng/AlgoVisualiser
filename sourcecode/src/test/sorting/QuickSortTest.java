@@ -1,7 +1,7 @@
-package Test;
+package test.sorting;
 
 import java.util.Scanner;
-import sorting.QuickSort;
+import visualso.sorting.QuickSort;
 
 public class QuickSortTest {
     public static void main(String[] args) {

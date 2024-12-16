@@ -1,7 +1,7 @@
-package Test;
+package test.sorting;
 
 import java.util.Scanner;
-import sorting.InsertionSort;
+import visualso.sorting.InsertionSort;
 
 public class InsertionSortTest {
     public static void main(String[] args) {

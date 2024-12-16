@@ -1,8 +1,8 @@
-package Test;
+package test.sorting;
 
 import java.util.Scanner;
 
-import sorting.BubbleSort;
+import visualso.sorting.BubbleSort;
 
 public class BubbleSortTest {
     public static void main(String[] args) {

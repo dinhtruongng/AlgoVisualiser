@@ -1,8 +1,8 @@
-package Test;
+package test.sorting;
 
 import java.util.Scanner;
 
-import sorting.SelectionSort;
+import visualso.sorting.SelectionSort;
 
 public class SelectionSortTest {
 	public static void main(String[] args) {

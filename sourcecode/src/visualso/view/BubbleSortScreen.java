@@ -73,7 +73,7 @@ public class BubbleSortScreen extends SortingScreen{
 	}
 	@Override
 	public void updateMainArray(int[] array) {
-		MergeSortScreen a = new MergeSortScreen(){
+		BubbleSortScreen a = new BubbleSortScreen(){
 			@Override
 			public void setMainArray() {
 				this.mainArray = array;
@@ -93,20 +93,21 @@ public class BubbleSortScreen extends SortingScreen{
 	public int getMaxValue() {
 		return 1000;
 	}
-	public String newHelpInfo() {
-		return "\nMerge Sort\n\n"
-				+ "Merge sort is one of the most efficient sorting algorithms. "
-				+ "It is based on the divide-and-conquer strategy - breaks down a big problem into smaller,"
-				+ "more manageable pieces that look similar to the initial problem. "
-				+ "It then solves these subproblems recursively and puts their solutions "
-				+ "together to solve the original problem. Merge sort continuously cuts down a list into multiple sublists until each has only one item, then merges those sublists into a sorted list.\n\n"
-				+ "Consider the Array has size n \n\n"
-				+ "Time Complexity:\n\n"
-				+ "     Worst Case: O(n*log(n))\n\n"
-				+ "     Best Case: O(n*log(n))\n\n"
-				+ "     Average case: O(n*log(n))\n\n"
-				+ "Space Complexity: O(n)\n\n"
-				+ "The array size in Merge Sort used for visualization has a max size of 100 elements.\n"
-				+ "A valid array in Merge Sort only has the max value is 1000, and it is non-negative numbers.";
-	}
+
+	@Override
+    public String newHelpInfo() {
+        return "\nBubble Sort\n\n"
+                + "Bubble sort is a simple sorting algorithm that repeatedly steps through the list,"
+                + " compares adjacent elements and swaps them if they are in the wrong order."
+                + " The pass through the list is repeated until the list is sorted.\n\n"
+                + "Consider the Array has size n \n\n"
+                + "Time Complexity:\n\n"
+                + "     Worst Case: O(n^2)\n\n"
+                + "     Best Case: O(n)\n\n"
+                + "     Average case: O(n^2)\n\n"
+                + "Space Complexity: O(1)\n\n"
+                + "The array size in Bubble Sort used for visualization has a max size of 100 elements.\n"
+                + "A valid array in Bubble Sort only has the max value is 1000, and it is non-negative numbers.";
+    }
 }
+

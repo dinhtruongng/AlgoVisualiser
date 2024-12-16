@@ -6,5 +6,6 @@
     Phúc: InsertionSort
     Linh: QuickSort
 
+- tham giá trị vào dưới chân cột
 - chat screen thì thêm vào đâu?
 - 

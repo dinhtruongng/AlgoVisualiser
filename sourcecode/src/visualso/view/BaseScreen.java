@@ -10,14 +10,14 @@ import visualso.controller.BaseController;
 
 @SuppressWarnings("serial")
 public abstract class BaseScreen extends JFrame {	
-	static final int WIDTH = 1000;
-	static final int HEIGHT = 700;
+	static final int WIDTH = 2000;
+	static final int HEIGHT = 800;
 	final BaseController baseController;
 	JPanel topBar;
 	JPanel buttonGroup;
 	//File directory
 	// public static final String ASSET_PATH = new File("").getAbsoluteFile() + "\\assets\\";
-	public static final String ASSET_PATH = new File("").getAbsoluteFile() + "\\prj\\sourcecode\\assets\\";
+	public static final String ASSET_PATH = new File("").getAbsoluteFile() + "\\sourcecode\\assets\\";
 	String helpInfo = "Sorting Alogorithm is a basic concept that every "
 			                  + "programmer should have known.\n \n "
 			                  + "There are a lot of sorting algorithms, "

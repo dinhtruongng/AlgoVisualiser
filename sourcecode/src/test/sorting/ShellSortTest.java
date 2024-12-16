@@ -1,9 +1,9 @@
-package Test;
+package test.sorting;
 
 
 import java.util.Scanner;
 
-import sorting.ShellSort;
+import visualso.sorting.ShellSort;
 
 public class ShellSortTest {
 	public static void main(String[] args) {
