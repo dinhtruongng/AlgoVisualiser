@@ -6,9 +6,13 @@ import java.net.http.HttpResponse;
 import java.io.*;
 import java.net.http.HttpRequest;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-
-import java.awt.Color;
+import org.commonmark.renderer.html.HtmlRenderer;
+import org.commonmark.node.*;
+import org.commonmark.parser.Parser;
+// import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
@@ -83,12 +87,12 @@ public class helpLLMtest implements ActionListener{
                 Thread thread = new Thread(() -> {
                     String llmResponse = sendToApi(userInput);
                     
-                    llmResponse = llmResponse
-                            .replace("\"", "") // Remove extra quotes
-                            .replace("\\n", "\n") // Convert literal '\n' to newlines
-                            .replaceAll("\\*\\*(.*?)\\*\\*", "<b>$1</b>") // Handle bold text
-                            .replace("\n", "<br>") // Replace newlines with HTML breaks
-                            .replace("\\u003e", ">"); // replace arrows symbols
+                    llmResponse = HTMLparser(llmResponse);
+                            // .replace("\"", "") // Remove extra quotes
+                            // .replace("\\n", "\n") // Convert literal '\n' to newlines
+                            // .replaceAll("\\*\\*(.*?)\\*\\*", "<b>$1</b>") // Handle bold text
+                            // .replace("\n", "<br>") // Replace newlines with HTML breaks
+                            // .replace("\\u003e", ">"); // replace arrows symbols
                             // .replace("<", "&lt;")// Escape HTML special characters
                             // .replace(">", "&gt;")
                             // .replace("&", "&amp;")
@@ -155,25 +159,57 @@ public class helpLLMtest implements ActionListener{
 		// });
     // 
     
-    private String parser(String s) {
-        // Look for the "text" field in the response
-        String textKey = "\"text\":";
-            
-        // Find the starting index of the "text" field
-        int textKeyIndex = s.indexOf(textKey);
-        if (textKeyIndex == -1) {
-            return null; // "text" field not found
+    public static String HTMLparser(String response) {
+        try {
+            // Create a parser
+            Parser parser = Parser.builder().build();
+            // Create an HTML renderer
+            HtmlRenderer renderer = HtmlRenderer.builder().build();
+            // Parse the Markdown string
+            Node document = parser.parse(response);
+            // Render the document to HTML
+            String html = renderer.render(document);
+            return html;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null; // Return null in case of any parsing errors
         }
+    }
 
-        // Calculate the start of the actual text value
-        int textValueStart = textKeyIndex + textKey.length();
-        
-        // Find the start and end of the string value
-        int firstQuote = s.indexOf("\"", textValueStart);
-        int secondQuote = s.indexOf("\"", firstQuote + 1);
+    public static String JSONparser(String jsonResponse) {
+        try {
+            // Parse the root JSON object
+            JSONObject root = new JSONObject(jsonResponse);
 
-        // Extract the text value
-        return s.substring(firstQuote + 1, secondQuote);
+            // Navigate to "candidates" array
+            JSONArray candidates = root.optJSONArray("candidates");
+            if (candidates == null || candidates.isEmpty()) {
+                return null; // "candidates" array is missing or empty
+            }
+
+            // Get the first object in the "candidates" array
+            JSONObject candidate = candidates.getJSONObject(0);
+
+            // Navigate to "content" -> "parts"
+            JSONObject content = candidate.optJSONObject("content");
+            if (content == null) {
+                return null; // "content" object is missing
+            }
+
+            JSONArray parts = content.optJSONArray("parts");
+            if (parts == null || parts.isEmpty()) {
+                return null; // "parts" array is missing or empty
+            }
+
+            // Get the first object in the "parts" array
+            JSONObject part = parts.getJSONObject(0);
+
+            // Extract and return the "text" field
+            return part.optString("text", null); // Returns null if "text" is missing
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null; // Return null in case of any parsing errors
+        }
     }
 
     // qwen 7b kaggle build
@@ -238,7 +274,7 @@ public class helpLLMtest implements ActionListener{
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             if (response.statusCode() == 200) {
                 String llmResponse = response.body();
-                String final_response = parser(llmResponse);
+                String final_response = JSONparser(llmResponse);
                 return final_response;
             } else {
                 return "Error: " + response.statusCode();
