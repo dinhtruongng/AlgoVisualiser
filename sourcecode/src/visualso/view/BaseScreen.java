@@ -11,7 +11,7 @@ import visualso.controller.BaseController;
 @SuppressWarnings("serial")
 public abstract class BaseScreen extends JFrame {	
 	static final int WIDTH = 2000;
-	static final int HEIGHT = 1000;
+	static final int HEIGHT = 850;
 	final BaseController baseController;
 	JPanel topBar;
 	JPanel buttonGroup;
