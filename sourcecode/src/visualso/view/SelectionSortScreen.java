@@ -1,6 +1,7 @@
 package visualso.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -13,6 +14,13 @@ import visualso.util.ColorUtils;
 public class SelectionSortScreen extends SortingScreen {
     public SelectionSortScreen() {
         super();
+        demonstratePseudoCode.setText("repeat (numOfElements - 1) times\n"
+        		+ "    set the first unsorted element as the minimum\n"
+        		+ "    for each of the unsorted elements\n"
+        		+ "        if element < currentMinimum\n"
+        		+ "            set element as new minimum\n"
+        		+ "    swap minimum with the first unsorted position");
+		demonstratePseudoCode.setFont(new Font("Sora", Font.ITALIC,14));                
         createName("SELECTION SORT");
         sortingController.setModel(new SelectionSort(mainArray));
     }

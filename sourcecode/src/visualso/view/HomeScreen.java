@@ -82,10 +82,10 @@ public class HomeScreen extends BaseScreen {
 	}
 	
 	private JPanel createSortSelectionPane() {
-		JPanel sortSelectionPane = new JPanel(new GridLayout(3,3));
+		JPanel sortSelectionPane = new JPanel(new GridLayout(2,3));
 		SortButton btnMergeSort = new SortButton("Merge Sort",this,homeController);
-		SortButton btnCountingSort = new SortButton("Counting Sort",this,homeController);
-		SortButton btnRadixSort = new SortButton("Radix Sort",this,homeController);
+		//SortButton btnCountingSort = new SortButton("Counting Sort",this,homeController);
+		//SortButton btnRadixSort = new SortButton("Radix Sort",this,homeController);
 		SortButton btnBubbleSort = new SortButton("Bubble Sort",this,homeController);
 		SortButton btnInsertionSort = new SortButton("Insertion Sort",this,homeController);
 		SortButton btnSelectionSort = new SortButton("Selection Sort",this,homeController);
@@ -97,8 +97,8 @@ public class HomeScreen extends BaseScreen {
 		sortSelectionPane.add(btnQuickSort);
 		sortSelectionPane.add(btnShellSort);
 		sortSelectionPane.add(btnMergeSort);
-		sortSelectionPane.add(btnCountingSort);
-		sortSelectionPane.add(btnRadixSort);
+		//sortSelectionPane.add(btnCountingSort);
+		//sortSelectionPane.add(btnRadixSort);
 		return sortSelectionPane;
 	}
 

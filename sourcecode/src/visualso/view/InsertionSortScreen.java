@@ -1,6 +1,7 @@
 package visualso.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -13,6 +14,14 @@ import visualso.util.ColorUtils;
 public class InsertionSortScreen extends SortingScreen {
     public InsertionSortScreen() {
         super();
+        demonstratePseudoCode.setText("mark first element as sorted\n"
+        		+ "for each unsorted element X\n"
+        		+ "    'extract' the element X\n"
+        		+ "    for j = lastSortedIndex down to 0\n"
+        		+ "        if current element j > X\n"
+        		+ "            move sorted element to the right by 1\n"
+        		+ "        break loop and insert X here");
+		demonstratePseudoCode.setFont(new Font("Sora", Font.ITALIC,14));                
         createName("INSERTION SORT");
         sortingController.setModel(new InsertionSort(mainArray));
     }

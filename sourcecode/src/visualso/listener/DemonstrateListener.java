@@ -15,10 +15,12 @@ public class DemonstrateListener extends MyActionListener{
 		if (((JButton)e.getSource()).getText().equals("<")) {
 			((JButton)e.getSource()).setText(">");
 			controller.getView().getDemonstratePane().setVisible(true);
+			controller.getView().getDemonstratePseudoCode().setVisible(true);
 		}
 		else {
 			((JButton )e.getSource()).setText("<");
 			controller.getView().getDemonstratePane().setVisible(false);
+			controller.getView().getDemonstratePseudoCode().setVisible(false);
 		}
 	}
 }

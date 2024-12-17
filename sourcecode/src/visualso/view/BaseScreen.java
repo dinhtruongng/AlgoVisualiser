@@ -11,7 +11,7 @@ import visualso.controller.BaseController;
 @SuppressWarnings("serial")
 public abstract class BaseScreen extends JFrame {	
 	static final int WIDTH = 2000;
-	static final int HEIGHT = 800;
+	static final int HEIGHT = 1000;
 	final BaseController baseController;
 	JPanel topBar;
 	JPanel buttonGroup;
@@ -21,15 +21,13 @@ public abstract class BaseScreen extends JFrame {
 	String helpInfo = "Sorting Alogorithm is a basic concept that every "
 			                  + "programmer should have known.\n \n "
 			                  + "There are a lot of sorting algorithms, "
-			                  + "but to be suitable with our project, we only focus on 8 algorithms: \n"
+			                  + "but to be suitable with our project, we only focus on 6 algorithms: \n"
 			                  + "+ Merge Sort\n"
 			                  + "+ Quick Sort\n"
 			                  + "+ Bubble Sort\n"
 			                  + "+ Insertion Sort\n"
 			                  + "+ Shell Sort\n"
-			                  + "+ Selection Sort\n"
-			                  + "+ Counting Sort\n"
-			                  + "+ Radix Sort\n \n"
+			                  + "+ Selection Sort\n \n"
 			                  + "This application invented aiming to the purpose of visualizing "
 			                  + "these alogrithms in a colorful way to help "
 			                  + "user understand this concept easier and meet our class "
@@ -39,7 +37,7 @@ public abstract class BaseScreen extends JFrame {
 			                  + "Our app is inspired of Visualgo so we named it as VisualSO as "
 			                  + "Visual Sorting algorithms.\n \n"
 			                  + "Everything you need is:\n "
-			                  + "1.Choosing one of 8 algorithms in the blocks to start your journey\n "
+			                  + "1.Choosing one of 6 algorithms in the blocks to start your journey\n "
 			                  + "2.Create your own array or random array by the leftside button\n "
 			                  + "3.Click Sort and view it visualizes, the explanation will be demonstrate on "
 			                  + "the right side and flow controller at the bottom.\n"
@@ -55,7 +53,7 @@ public abstract class BaseScreen extends JFrame {
 			                   + "1. Nguyen Dinh Truong\n     20235566 - Elitech DS&AI K68\n\n"
 			                   + "2. Hoang Danh Nhat\n     20230095 - Elitech Cyber Security K68\n\n"
 			                   + "3. Hoang Phuong Linh\n     20235598 - Elitech Cyber Security K68\n\n"
-			                   + "4. Vu Hai An\n     20205468 - Elitech DS&AI K68\n\n"
+			                   + "4. Vu Hai An\n     20235468 - Elitech DS&AI K68\n\n"
 							   + "5. Truong Minh Phuc\n     20235545 - Elitech DS&AI K68";
 	
 	public BaseScreen() {

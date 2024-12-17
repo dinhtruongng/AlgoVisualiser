@@ -38,7 +38,7 @@ import java.nio.file.Paths;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import visualso.util.DataUtils;
+// import visualso.util.DataUtils;
 
 @SuppressWarnings("serial")
 public abstract class SortingScreen extends BaseScreen {
@@ -54,6 +54,7 @@ public abstract class SortingScreen extends BaseScreen {
 	MySlider processSlider;
 	Timer timer;
 	DemonstratePane demonstratePane;
+	DemonstratePane demonstratePseudoCode;
 	MySideButton btnCreate;
 	MySideButton btnRandom;
 	MyLabel A;
@@ -128,7 +129,11 @@ public abstract class SortingScreen extends BaseScreen {
 		visualizer.add(btnSort,JLayeredPane.MODAL_LAYER);
 		//RIGHTSIDEBAR
 		demonstratePane =  new DemonstratePane(380,65,ColorUtils.MY_GREEN, sortInfo);
+		demonstratePane.setForeground(Color.BLACK);
 		visualizer.add(demonstratePane,JLayeredPane.MODAL_LAYER);
+		
+		demonstratePseudoCode = new DemonstratePane(0, 0, ColorUtils.MY_GREEN, "");
+		visualizer.add(demonstratePseudoCode,JLayeredPane.MODAL_LAYER);
 		return visualizer;
 	}
 	
@@ -237,7 +242,7 @@ public abstract class SortingScreen extends BaseScreen {
 		rightSideBar.setBackground(Color.BLACK);
 		rightSideBar.setBorder(BorderFactory.createEmptyBorder(0,0,15,0));
 		//demonstrate button "<" belong to rightsidebar
-		MyButton btnDemonstrate = new MyButton(45,65,ColorUtils.MY_GREEN);
+		MyButton btnDemonstrate = new MyButton(45,250,ColorUtils.MY_GREEN);
 		btnDemonstrate.setText("<");
 		btnDemonstrate.setFont(new Font("Sora",Font.BOLD,22));
 		btnDemonstrate.addActionListener(sortingController.rightSideButtonClicked());
@@ -379,6 +384,10 @@ public abstract class SortingScreen extends BaseScreen {
 	}
 	public DemonstratePane getDemonstratePane() {
 		return demonstratePane;
+	}
+
+	public DemonstratePane getDemonstratePseudoCode() {
+		return demonstratePseudoCode;
 	}
 	
 	public JPanel getContainer1() {

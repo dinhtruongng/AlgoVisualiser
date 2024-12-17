@@ -11,7 +11,7 @@ public class DemonstratePane extends JTextArea{
 	public DemonstratePane(int x, int y,Color color, String sortInfo) {
 		setOpaque(true);
 		setBackground(color);
-		setForeground(Color.WHITE);
+		setForeground(Color.BLACK);
 		setText(sortInfo);
 		setEditable(false);
 		setFocusable(true);

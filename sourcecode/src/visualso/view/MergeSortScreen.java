@@ -1,7 +1,7 @@
 package visualso.view;
 
- 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -14,6 +14,14 @@ import visualso.util.ColorUtils;
 public class MergeSortScreen extends SortingScreen{
 	public MergeSortScreen() {
 		super();
+		demonstratePseudoCode.setText("split each element into partition of size 1\n"
+				+ "recursively merge adjacent partitions\n"
+				+ "    for i = leftPartIdx to rightPartIdx\n"
+				+ "        if leftPartHeadValue <= rightPartHeadValue\n"
+				+ "            copy leftPartHeadValue\n"
+				+ "        else: copy rightPartHeadValue; Increase InvIdx\n"
+				+ "copy element back to original aray\n");
+		demonstratePseudoCode.setFont(new Font("Sora", Font.ITALIC,14));  
 		createName("MERGE SORT");
 		sortingController.setModel(new MergeSort(mainArray));
 	}

@@ -1,5 +1,5 @@
 package visualso.view;
-
+import java.awt.Font;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
@@ -12,10 +12,18 @@ import visualso.util.ColorUtils;
 @SuppressWarnings("serial")
 public class BubbleSortScreen extends SortingScreen{
 	public BubbleSortScreen() {
-		super();
-		createName("BUBBLE SORT");
-		sortingController.setModel(new BubbleSort(mainArray));
-	}
+        super();
+        demonstratePseudoCode.setText("do\n"
+        		+ "    swapped = false\n"
+        		+ "       for i = 1 to indexOfLastUnsortedElement\n"
+        		+ "           if (leftElement > rightElement)\n"
+        		+ "               swap(leftElement, rightElement)\n"
+        		+ "               swapped = true; ++swapCounter\n"
+        		+ "while swapped ");
+		demonstratePseudoCode.setFont(new Font("Sora", Font.ITALIC,14));        
+        createName("BUBBLE SORT");
+        sortingController.setModel(new BubbleSort(mainArray));
+    }
 	@Override
 	public Visualizer sub(int[] array) {
 		Visualizer sub =  new Visualizer(array) {

@@ -17,7 +17,8 @@ public class WindowResize extends MyComponentAdapter{
     	controller.getView().getA().setBounds(236, controller.getView().getHeight()-205, 28,28);
     	controller.getView().getInputArrayField().setBounds(266, controller.getView().getHeight()-205, 228,28);
     	controller.getView().getBtnGo().setBounds(496, controller.getView().getHeight()-205, 50,28);
-    	controller.getView().getDemonstratePane().setBounds(controller.getView().getWidth()-490,  controller.getView().getHeight() -208,380 , 65);
+		controller.getView().getDemonstratePane().setBounds(controller.getView().getWidth()-490,  controller.getView().getHeight() - 390,380 , 45);
+    	controller.getView().getDemonstratePseudoCode().setBounds(controller.getView().getWidth()-490,  controller.getView().getHeight() - 340,380 , 200);
     	controller.getView().getAnimation().setBounds(45, 30, controller.getView().getWidth()-200, 520);
     	controller.getView().getContainer1().setBounds(45, 30, controller.getView().getWidth()-200, 522);
     	controller.getView().getMain().setBounds(0, 0, controller.getView().getWidth()-200, 250);

@@ -3,6 +3,8 @@ package visualso.view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 import visualso.component.Visualizer;
@@ -14,6 +16,19 @@ import visualso.util.ColorUtils;
 public class RadixSortScreen extends SortingScreen {
 	public RadixSortScreen() {
 		super();
+		demonstratePseudoCode.setText("RadixSort(array):\n"
+				+ "    max = FindMax(array); maxDigits = CountDigits(max)\n"
+				+ "    placing = 1\n"
+				+ "    for i = 0 to maxDigits - 1:\r\n"
+				+ "        CountingSortByDigit(array, placing), placing *= 10\n"
+				+ "CountingSortByDigit(array, placing):\n"
+				+ "    buckets = CreateArray(10)\n"
+				+ "    for element in array:\r\n"
+				+ "        digit = (element / placing) % 10\r\n"
+				+ "        AddToBucket(buckets[digit], element)\r\n"
+				+ "    RestoreArrayFromBuckets(array, buckets)");
+		demonstratePseudoCode.setBorder(BorderFactory.createEmptyBorder(2, 2, 5, 2));
+		demonstratePseudoCode.setFont(new Font("Sora", Font.ITALIC,13)); 
 		createName("RADIX SORT");
 		sortingController.setModel(new RadixSort(mainArray));
 	}

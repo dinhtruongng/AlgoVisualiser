@@ -1,6 +1,7 @@
 package visualso.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -13,6 +14,14 @@ import visualso.util.ColorUtils;
 public class QuickSortScreen extends SortingScreen {
     public QuickSortScreen() {
         super();
+        demonstratePseudoCode.setText("for each (unsorted) partition\n"
+        		+ "set last element as pivot\n"
+        		+ "    storeIndex = 0\n"
+        		+ "    for i = leftmostIndex to (pivotIndex - 1)\n"
+        		+ "        if (A[i] <= A[pivot])\n"
+        		+ "            swap(i, storeIndex); ++storeIndex\n"
+        		+ "    swap(pivot, storeIndex - 1)");
+		demonstratePseudoCode.setFont(new Font("Sora", Font.ITALIC,14));        
         createName("QUICK SORT");
         sortingController.setModel(new QuickSort(mainArray));
     }

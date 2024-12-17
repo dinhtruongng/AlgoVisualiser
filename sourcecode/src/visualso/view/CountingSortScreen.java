@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 import visualso.component.Visualizer;
@@ -15,6 +16,18 @@ import visualso.util.ColorUtils;
 public class CountingSortScreen extends SortingScreen {
 	public CountingSortScreen() {
 		super();
+		demonstratePseudoCode.setText("CountingSort(array):\r\n"
+				+ "    counts = Counter(array); index = 0    \n"
+				+ "    for i = 0 to counts.length - 1:\r\n"
+				+ "        while counts[i] > 0:\r\n"
+				+ "            array[index] = i; counts[i] -= 1; index += 1 \n"
+				+ "Counter(array):\n"
+				+ "    max = FindMax(array); counts = CreateArray(max + 1)\n"
+				+ "    for element in array:\n"
+				+ "        counts[element] += 1 \n"
+				+ "    return counts");
+		demonstratePseudoCode.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
+		demonstratePseudoCode.setFont(new Font("Sora", Font.ITALIC,14));        
 		createName("COUNTING SORT");
 		sortingController.setModel(new CountingSort(mainArray));
 	}

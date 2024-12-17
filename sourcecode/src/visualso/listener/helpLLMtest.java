@@ -42,6 +42,34 @@ public class helpLLMtest implements ActionListener{
 	// 	this.name = name;
 	// 	this.helpInfo = helpInfo;
 	// }
+
+    String helpInfo = "Sorting Alogorithm is a basic concept that every "
+			                  + "programmer should have known.\n \n "
+			                  + "There are a lot of sorting algorithms, "
+			                  + "but to be suitable with our project, we only focus on 6 algorithms: \n"
+			                  + "+ Merge Sort\n"
+			                  + "+ Quick Sort\n"
+			                  + "+ Bubble Sort\n"
+			                  + "+ Insertion Sort\n"
+			                  + "+ Shell Sort\n"
+			                  + "+ Selection Sort\n \n"
+			                  + "This application invented aiming to the purpose of visualizing "
+			                  + "these alogrithms in a colorful way to help "
+			                  + "user understand this concept easier and meet our class "
+			                  + "project needs.\n \n"
+			                  + "Without loss of generality, we assume that we will sort only Integers, "
+			                  + "not necessarily distinct, in non-decreasing order in this visualization.\n\n"
+			                  + "Our app is inspired of Visualgo so we named it as VisualSO as "
+			                  + "Visual Sorting algorithms.\n \n"
+			                  + "Everything you need is:\n "
+			                  + "1. Choosing one of 6 algorithms in the blocks to start your journey\n "
+			                  + "2. Create your own array or random array by the leftside button\n "
+			                  + "3. Click Sort and view it visualizes, the explanation will be demonstrate on "
+			                  + "the right side and flow controller at the bottom.\n"
+                              + "4. You can also interact with the application through voice mode. \n"
+                              + "5. You can ask for help in the chat interface, and the wizard will respond to you.\n"
+			                  + "Have fun!";
+
     public helpLLMtest() {
         super();
     }
@@ -58,9 +86,12 @@ public class helpLLMtest implements ActionListener{
         conversationArea.setEditable(false);
         conversationArea.setFont(new Font("Monospaced", Font.PLAIN, 16));
         
+        String htmlHelp = HTMLparser(helpInfo);
+
 
         // Maintain the full HTML content
         StringBuilder chatHistory = new StringBuilder();
+        chatHistory.append(htmlHelp);
         chatHistory.append("<html><body>");
         chatHistory.append("<p><b>Sorting Wizard:</b><br>I'm a wizard come to help you with sorting algorithms.</p>");
         chatHistory.append("</body></html>");

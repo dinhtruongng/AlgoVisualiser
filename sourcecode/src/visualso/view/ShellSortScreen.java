@@ -1,6 +1,7 @@
 package visualso.view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -13,6 +14,14 @@ import visualso.util.ColorUtils;
 public class ShellSortScreen extends SortingScreen {
     public ShellSortScreen() {
         super();
+        demonstratePseudoCode.setText("n = length of array\n"
+        		+ "for gap = n//2 down to 1\n"
+        		+ "    for i = gap to (n-1)\n"
+        		+ "        A[i] = key, j = i\n"
+        		+ "        while j >= gap and A[j - gap] > key\n"
+        		+ "            swap(A[j], A[j - gap)\n"
+        		+ "        A[j] = key");
+		demonstratePseudoCode.setFont(new Font("Sora", Font.ITALIC,14));                
         createName("SHELL SORT");
         sortingController.setModel(new ShellSort(mainArray));
     }
