@@ -1,0 +1,10 @@
+- Để chạy được phần chat:
+1. Tải 2 package ở link sau:
+    - https://repo1.maven.org/maven2/org/commonmark/commonmark/0.24.0/: tải file commonmark-0.24.0.jar
+    - https://github.com/stleary/JSON-java: ngay đầu, nhấn nút "Click here if you just want the latest release jar file."
+
+2. mở project trong vscode
+3. tạo folder lib, ngang với các folder như design hay sourcecode
+4. kéo 2 file jar vừa tải về vào folder lib
+5. khởi động lại vscode
+6. ok
