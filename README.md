@@ -44,7 +44,7 @@ Sorting Algorithms Visualizer is an interactive web-based application that helps
 6. AI-assisted features like tutoring and voice mode. 
 
 ## Technical report and prensentation slide
-1. [Report]()
+1. [Report](https://husteduvn-my.sharepoint.com/:w:/g/personal/truong_nd235566_sis_hust_edu_vn/ETI3szmsbAtHn-GgpuhDreUBdWvVaFw3i_Zia6zfuxd-Jw)
 2. [Slide](https://www.canva.com/design/DAGZcz_7Crk/WU_WLsueVaahkep4yZdzSg/edit?utm_content=DAGZcz_7Crk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Roadmap
